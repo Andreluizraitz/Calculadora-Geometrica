@@ -1,0 +1,160 @@
+/* Layout principal */
+main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+select,
+input[type="number"] {
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.box {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.boxsing {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.left-container,
+.right-container {
+  flex: 1;
+}
+
+.left-container h2,
+.right-container h2 {
+  font-size: 2.2rem;
+}
+
+/* Botão Calcular */
+.buttonCalc {
+  background-color: #003e75;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buttonCalc:hover {
+  background-color: #005bb5;
+  transform: scale(1.05);
+}
+
+/* Caixa de resultado */
+.resultado {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+}
+
+.resultado p {
+  margin: 8px 0;
+  font-size: 1.4rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  input[type="number"] {
+    size: 1rem;
+  }
+  .left-container h2,
+  .right-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .buttonCalc {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .resultado {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  #box {
+    flex-direction: column; /* força empilhar */
+    gap: 1rem;
+    width: 90%;
+  }
+  .left-container h2,
+  .right-container h2 {
+    max-width: 100%;
+  }
+
+  .buttonCalc {
+    font-size: 0.7rem;
+    padding: 0.7rem;
+  }
+
+  .resultado {
+    width: 100%;
+    max-width: 100%; /* evita estourar */
+    box-sizing: border-box;
+  }
+}
+/* Layout lado a lado apenas no PC */
+@media (min-width: 769px) {
+  #box {
+    display: flex;
+    justify-content: space-between; /* esquerda e direita bem separados */
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px; /* opcional: limite para não ficar muito esticado */
+    margin: 0 auto; /* mantém centralizado o conjunto dentro da tela */
+  }
+
+  .left-container {
+    flex: 1;
+    max-width: 500px; /* largura máxima para o formulário */
+  }
+
+  .right-container {
+    flex: 1;
+    max-width: 500px; /* largura máxima para o resultado */
+  }
+}

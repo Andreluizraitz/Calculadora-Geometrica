@@ -1,0 +1,209 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  border: 0 black;
+  border-bottom: 0.2rem;
+  border-style: solid;
+}
+
+.icon {
+  padding-left: 2rem;
+  font-family: JetBrains MOno;
+  font-size: 0.8rem;
+}
+
+.about {
+  display: flex;
+  gap: 2rem;
+  font-family: JetBrains MOno;
+  font-size: 0.8rem;
+  padding-right: 10px;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  border-bottom-style: groove;
+  border-color: black;
+  transition: 100ms 10ms;
+  cursor: pointer;
+  transform: scale(1.15);
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+.about input {
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  font-weight: bold;
+  font-family: JetBrains MOno;
+  font-size: 1em; /* Tamanho da fonte do título */
+  background-color: transparent;
+}
+
+.about input:hover {
+  cursor: pointer;
+  transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+  border-bottom-style: groove;
+  border-color: black;
+  transition: 100ms 10ms;
+}
+
+.about input:visited {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  border: 0 black;
+  border-bottom: 0.2rem;
+  border-style: solid;
+  justify-content: center;
+  align-items: baseline;
+  font-family: Inter;
+  font-size: 1rem;
+}
+
+.box {
+  display: flex;
+  gap: 4rem;
+}
+
+.boxsing {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2rem 4rem;
+  gap: 3rem;
+}
+
+.left-container {
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.left-container h2 {
+  font-size: 4.3rem;
+  font-family: JetBrains Mono;
+}
+
+.right-container {
+  flex: 1;
+  flex-direction: column;
+  justify-content: right;
+  font-size: 0.6rem;
+}
+
+.right-container h2 {
+  font-size: 3.2rem;
+  font-family: JetBrains Mono;
+}
+
+.right-container a:hover {
+  border-color: #003e7500;
+  transition: 30ms 10ms;
+}
+
+.buttonCalc {
+  background-color: #003e75;
+  border-radius: 0.8rem;
+  height: 4rem;
+  width: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonCalc a {
+  color: white;
+  font-family: JetBrains Mono;
+  font-size: 0.8rem;
+}
+
+/* Dark Theme */
+
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --link: #0066cc;
+  --border: #dddddd;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.theme-dark {
+  --bg: #1f1f23;
+  --text: #e3e3e8;
+  --link: #4da6ff;
+  --border: #444653;
+}
+
+body,
+a,
+input,
+hr {
+  transition: background-color 0.4s ease, color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--link);
+}
+
+#theme-toggle {
+  color: var(--link);
+  outline: none;
+  border: none;
+}
+
+hr {
+  border-color: var(--border);
+}
+
+/* Parte Mobile */
+
+@media (max-width: 768px) {
+  .icon {
+    font-size: 0.3rem;
+  }
+  .about {
+    font-size: 0.4rem;
+  }
+
+  nav {
+    font-size: 0.6rem;
+  }
+
+  .left-container h2 {
+    font-size: 2.2rem;
+  }
+
+  .right-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .buttonCalc a {
+    font-size: 0.6rem;
+  }
+}

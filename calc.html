@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="components/favicon.ico" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/calc.css" />
+    <script>
+      window.MathJax = {
+        options: {
+          enableMenu: false, // 🔒 desabilita o menu de contexto
+        },
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <script src="scripts/theme-switcher.js" defer></script>
+    <title>Calculadora De Geometríca</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="icon">
+        <h1>Calculadora Geométrica</h1>
+      </div>
+      <div class="about">
+        <h3><a href="about.html">Mais</a></h3>
+        <h3><input type="button" value="Mudar Tema" id="theme-toggle" /></h3>
+      </div>
+    </header>
+
+    <main>
+      <div id="box">
+        <div class="left-container">
+          <label for="tipo">Escolha o Tipo de Cálculo:</label>
+          <select id="tipo" name="tipo de Cálculo">
+            <option value="">-- Selecione --</option>
+            <option value="area">Área</option>
+            <option value="perimetro">Perimetro</option>
+            <option value="volume">Volume</option>
+          </select>
+
+          <label for="forma">Escolha a Forma geométrica:</label>
+          <select name="forma" id="forma">
+            <option value="">-- Selecione --</option>
+            <option value="quadrado">Quadrado</option>
+            <option value="retangulo">Retângulo</option>
+            <option value="triangulo">Triângulo</option>
+            <option value="circulo">Círculo</option>
+            <option value="cilindro">Cilindro</option>
+            <option value="esfera">Esfera</option>
+            <option value="prisma">Prisma</option>
+            <option value="cone">Cone</option>
+          </select>
+
+          <div id="forma-container">
+            <div id="campos"></div>
+            <div id="imagem-forma">
+              <img
+                id="img-forma"
+                src=""
+                alt="Ilustração da forma"
+                style="max-width: 150px; display: none"
+              />
+            </div>
+          </div>
+
+          <input
+            id="buttonCalc"
+            class="buttonCalc"
+            type="button"
+            value="Calcular"
+          />
+        </div>
+
+        <div class="right-container">
+          <div id="resultadoBox" class="resultado">
+            <p id="formula"></p>
+            <p id="valor"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="boxsing">
+        <p>
+          Dica: selecione a forma geométrica e insira os valores para calcular.
+        </p>
+      </div>
+    </main>
+  </body>
+  <script src="scripts/dynamicfield.js"></script>
+  <script>
+    const btn = document.getElementById("theme-toggle");
+    btn.addEventListener("click", () => {
+      window.themeSwitcher.toggle();
+    });
+
+    // Exemplo: reagir à mudança
+    window.themeSwitcher.onChange((newTheme) => {
+      console.log("Tema atual:", newTheme);
+    });
+  </script>
+</html>

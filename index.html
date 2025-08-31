@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="components/favicon.ico" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="scripts/theme-switcher.js" defer></script>
+    <title>Calculadora De Geometríca</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="icon">
+        <h1>Calculadora Geométrica</h1>
+      </div>
+      <div class="about">
+        <h3><input type="button" value="Mudar Tema" id="theme-toggle" /></h3>
+      </div>
+    </header>
+    <nav>
+      <div class="box">
+        <h3><a href="calc.html?tipo=area">Àrea</a></h3>
+        <h3><a href="calc.html?tipo=perimetro">Perimetro</a></h3>
+        <h3><a href="calc.html?tipo=volume">Volume</a></h3>
+      </div>
+    </nav>
+    <main>
+      <div class="boxsing">
+        <div class="left-container">
+          <h2 class="sing">Tudo Começa Com a Forma Certa</h2>
+        </div>
+        <div class="right-container">
+          <h2 class="sing">Faça Todos os Cálculos Geométricos Aqui!</h2>
+          <div class="buttonCalc">
+            <a href="calc.html">Ir Para a Calculadora</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+    const btn = document.getElementById("theme-toggle");
+    btn.addEventListener("click", () => {
+      window.themeSwitcher.toggle();
+    });
+
+    window.themeSwitcher.onChange((newTheme) => {
+      console.log("Tema atual:", newTheme);
+    });
+  </script>
+</html>
