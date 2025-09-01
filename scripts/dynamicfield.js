@@ -13,6 +13,7 @@ const tipoParam = params.get("tipo");
 if (tipoParam) {
     tipoSelect.value = tipoParam;
     tipoSelect.dispatchEvent(new Event("change")); // força atualizar as opções
+        atualizarCampos(); // 🔥 garante que já limita as formas corretas
 }
 
 //dynamic field
